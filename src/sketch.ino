@@ -136,11 +136,9 @@ volatile double Enc03rDriver::angle1;
 
 void setup()
 {
-    Serial.begin(9600);
-    Serial.println("Initializing...");
+    Serial.begin(115200);
     Enc03rDriver::initialize();
-    Serial.println("Started...");
-    Serial.println("velocity0 angle0 velocity1 angle1");
+    Serial.println("velocity0	angle0	velocity1	angle1");
 }
 
 void loop()
@@ -155,11 +153,11 @@ void loop()
     double a0 = Enc03rDriver::getAngle(0);
     double a1 = Enc03rDriver::getAngle(1);
     Serial.print(v0);
-    Serial.print(" ");
+    Serial.print("	");
     Serial.print(a0);
-    Serial.print(" ");
+    Serial.print("	");
     Serial.print(v1);
-    Serial.print(" ");
+    Serial.print("	");
     Serial.println(a1);
-    delay(1000);
+    delay(100);
 }
